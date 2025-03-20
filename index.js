@@ -115,7 +115,8 @@ app.get('/', (req, res) => {
   
 
   // Server starten (dynamisch)
+  
   const Port = process.env.PORT || 3000;
-app.listen(Port, () => {
+  app.listen(Port, () => {
     console.log('Server läuft auf Port 3000');
   });
