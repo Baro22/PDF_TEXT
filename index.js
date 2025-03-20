@@ -3,6 +3,7 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import PDFDocument from 'pdfkit';
+import { log } from 'console';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,7 +31,7 @@ const fonts = {
   "Helvetica": "Helvetica",               // Eingebaute Schriftart in PDFKit
   "Times New Roman": "Times-Roman",         // Eingebaute Schriftart
   "DejaVuSans": "./public/fonts/DejaVuSans.ttf",   // Externe Schriftartdatei
-  "NotoSans-Regular": "/public/fonts/NotoSans-Regular.ttf",
+  "NotoSans-Regular": "./public/fonts/NotoSans-Regular.ttf",
   "Garamond": "./public/fonts/Garamond.ttf",
   "Futura": "./public/fonts/Futura.ttf",
   "Montserrat": "./public/fonts/Montserrat.ttf"
@@ -116,7 +117,11 @@ app.get('/', (req, res) => {
 
   // Server starten (dynamisch)
   
-  const PORT = process.env.PORT || 8080;
-  app.listen(PORT, () => {
-    console.log(`Server läuft auf Port ${PORT}`);
-  });
+  // const PORT = process.env.PORT || 8080;
+  // app.listen(PORT, () => {
+  //   console.log(`Server läuft auf Port ${PORT}`);
+  // });
+
+  app.listen(3000, () => {
+    console,log(`Server läuft auf Port 3000`)
+  })
