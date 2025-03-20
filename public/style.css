@@ -1,0 +1,206 @@
+:root {
+  /* Light Theme */
+  --primary-color: #0288D1;      /* Frisches Blau */
+  --secondary-color: #B3E5FC;    /* Hellere Abstufung als Hintergrundakzent */
+  --accent-color: #FF9800;       /* Freundliches Orange als Eyecatcher */
+  --background-color: #FAFAFA;   /* Sehr helles Grau statt reinem Weiß */
+  --text-color: #212121;         /* Dunkles Grau, angenehmer als tiefes Schwarz */
+}
+
+.darkmode {
+  /* Dark Theme */
+  --primary-color: #455A64;      /* Dezentes Dunkelblau-Grau */
+  --secondary-color: #263238;    /* Noch dunklere Abstufung für Hintergründe */
+  --accent-color: #FFB74D;       /* Warmer Orange-Ton als Akzent */
+  --background-color: #121212;   /* Sehr dunkles Grau als Grundfarbe */
+  --text-color: #FAFAFA;         /* Fast weiß, gut lesbar auf dunklem Hintergrund */
+}
+
+/* Globales Reset und Grundstil */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Seitenhintergrund und Textfarbe */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#theme-switch {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 5px;
+  right: 20px;
+}
+
+#theme-switch svg {
+  fill: black;
+  height: 30px;
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+.darkmode #theme-switch svg:last-child {
+  display: block;
+}
+
+/* Navigation */
+.navigation {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Hauptcontainer */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+}
+
+/* Card-Container für das Formular */
+.card {
+  background-color: var(--secondary-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 40rem; /* Reduzierte max-width für bessere Lesbarkeit */
+  /* Feste Höhe entfernt, damit sich die Card flexibel an den Inhalt anpasst */
+}
+
+/* Neues Grid innerhalb der Card */
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;  /* Die ersten beiden Spalten sind breiter */
+  gap: 1.5rem; /* Erhöhter Abstand zwischen den Elementen */
+  align-items: start;
+  /* Feste Höhe entfernt, um flexibler zu sein */
+}
+
+/* Die Textarea soll über die ersten beiden Spalten gehen */
+.textarea-container {
+  grid-column: 1 / span 3;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Element-Styles */
+.element1 {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+}
+.element2 {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+}
+.element3 {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+}
+.element4 {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+}
+.element5 {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Überschrift im Formular */
+.card h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* Formular-Gruppen */
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+textarea,
+input[type="text"],
+input[type="number"],
+select {
+  padding: 0.75rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Button */
+.main-btn {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.main-btn:hover {
+  background-color: var(--accent-color);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .textarea-container,
+  .element1,
+  .element2,
+  .element3,
+  .element4,
+  .element5 {
+    grid-column: 1;
+  }
+}
+
+
