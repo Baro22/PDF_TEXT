@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 function cleanText(str = '') {
   return str
@@ -39,7 +39,7 @@ const fonts = {
 
 // Basisroute: Liefert die Startseite
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
   });
 
   app.post('/generate-pdf', (req, res) => {
@@ -70,7 +70,7 @@ app.get('/', (req, res) => {
 
       if (selectedFont.endsWith('.ttf') || selectedFont.endsWith('.otf')) {
         // Externe Schrift: zuerst registrieren
-        doc.registerFont(fontTyp, selectedFont);
+        doc.registerFont(fontTyp, path.join(__dirname, '..', selectedFont));
         // Dann den registrierten Namen als Schriftart setzen:
         doc.font(fontTyp);
       } else {
@@ -113,15 +113,15 @@ app.get('/', (req, res) => {
   });
   
   
-  
+  export default app;  
 
-  // Server starten (dynamisch)
+  // // Server starten (dynamisch)
   
-  const PORT = process.env.PORT || 8080;
-  app.listen(PORT, () => {
-    console.log(`Server läuft auf Port ${PORT}`);
-  });
+  // const PORT = process.env.PORT || 8080;
+  // app.listen(PORT, () => {
+  //   console.log(`Server läuft auf Port ${PORT}`);
+  // });
 
-  // app.listen(3000, () => {
-  //   console,log(`Server läuft auf Port 3000`)
-  // })
+  // // app.listen(3000, () => {
+  // //   console,log(`Server läuft auf Port 3000`)
+  // // })
