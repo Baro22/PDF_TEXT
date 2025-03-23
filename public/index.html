@@ -1,52 +1,60 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PDF.TEXT - PDF Gestalten</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PDF.TEXT – PDF gestalten</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
   <header>
+    <!-- Darkmode-Umschalter -->
     <button id="theme-switch">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
+      <!-- Mond-Icon (für Hellmodus) -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/>
+      </svg>
+      <!-- Sonnen-Icon (für Darkmode) -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6 11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/>
+      </svg>
     </button>
-
+    <!-- Sprachumschalter (DE/EN) -->
+    <button id="lang-switch">EN</button>
     <nav class="navigation">
       <h1 class="logo">PDF.TEXT</h1>
     </nav>
   </header>
 
   <main class="main-container">
-    
-    <div class="card">
-      <h2>Pdf Gestalten</h2>
+    <!-- Formular-Card -->
+    <div class="card form-card">
+      <h2>PDF gestalten</h2>
       <form action="/generate-pdf" method="post" accept-charset="UTF-8">
         <div class="grid-container">
-          <!-- Textarea: spannt über die ersten beiden Spalten -->
+          <!-- Textarea (überspannt alle Spalten) -->
           <div class="textarea-container">
             <label for="text">Textinhalt:</label>
-            <textarea id="text" name="text" rows="8" placeholder="Gib hier deinen Text ein..."></textarea>
+            <textarea id="text" name="text" rows="8" placeholder="Gib hier deinen Text ein..." required></textarea>
+            <!-- Bereich für automatische Textanalyse -->
+            <div id="analysis" class="analysis-info"></div>
           </div>
-          <!-- Erste Reihe der weiteren Elemente -->
-          <div class="element element1">
+          <!-- Weitere Eingabefelder -->
+          <div class="element">
             <label for="header">Überschrift:</label>
-            <input type="text" id="header" name="header" placeholder="Deine Überschrift">
+            <input type="text" id="header" name="header" placeholder="Deine Überschrift" />
           </div>
-          <div class="element element2">
+          <div class="element">
             <label for="fontSize">Schriftgröße:</label>
-            <input type="number" id="fontSize" name="fontSize" min="8" max="24" value="12">
+            <input type="number" id="fontSize" name="fontSize" min="8" max="24" value="12" />
           </div>
-          <!-- Zweite Reihe der weiteren Elemente -->
-          <div class="element element3">
+          <div class="element">
             <label for="lineSpacing">Zeilenabstand:</label>
-            <input type="number" id="lineSpacing" name="lineSpacing" min="0" max="24" value="12">
+            <input type="number" id="lineSpacing" name="lineSpacing" min="0" max="24" value="12" />
           </div>
-          <div class="element element4">
-            <label for="fontTyp">Schriftart:</label>
-            <select name="fontTyp" id="font-typ">
+          <div class="element">
+            <label for="font-typ">Schriftart:</label>
+            <select id="font-typ" name="fontTyp">
               <option value="DejaVuSans">DejaVuSans</option>
               <option value="NotoSans-Regular">NotoSans-Regular</option>
               <option value="Helvetica">Helvetica</option>
@@ -56,10 +64,9 @@
               <option value="Montserrat">Montserrat</option>
             </select>
           </div>
-          <!-- Optional: drittes Element in der dritten Spalte -->
-          <div class="element element5">
-            <label for="textAlignment">Textausrichtung:</label>
-            <select name="textAlignment" id="text-alignment">
+          <div class="element">
+            <label for="text-alignment">Textausrichtung:</label>
+            <select id="text-alignment" name="textAlignment">
               <option value="left">links</option>
               <option value="right">rechts</option>
               <option value="center">mitte</option>
@@ -68,15 +75,22 @@
         </div>
         <button class="main-btn" type="submit">PDF erstellen</button>
       </form>
+      <!-- Bereich für Erfolgs-/Fehlermeldungen -->
+      <div id="message" class="message"></div>
     </div>
-    
+
+    <!-- Live-Vorschau-Card -->
+    <div class="card preview-card">
+      <h2 id="preview-title">Live-Vorschau</h2>
+      <div id="preview-content" class="preview-content"></div>
+    </div>
   </main>
 
   <footer class="footer">
     <p>&copy; 2025 PDF.TEXT</p>
   </footer>
 
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
 
